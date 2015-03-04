@@ -1,0 +1,468 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6A0A0D661A9D3D3600AFB549 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0A0D651A9D3D3600AFB549 /* AppDelegate.swift */; };
+		6A0A0D691A9D3D3600AFB549 /* KioskScanner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6A0A0D671A9D3D3600AFB549 /* KioskScanner.xcdatamodeld */; };
+		6A0A0D6E1A9D3D3600AFB549 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A0A0D6C1A9D3D3600AFB549 /* Main.storyboard */; };
+		6A0A0D701A9D3D3600AFB549 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A0A0D6F1A9D3D3600AFB549 /* Images.xcassets */; };
+		6A0A0D731A9D3D3600AFB549 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A0A0D711A9D3D3600AFB549 /* LaunchScreen.xib */; };
+		6A0A0D7F1A9D3D3600AFB549 /* KioskScannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0A0D7E1A9D3D3600AFB549 /* KioskScannerTests.swift */; };
+		6A2EB0381AA5B2F30089827C /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2EB0371AA5B2F30089827C /* Product.swift */; };
+		6A8621E41AA44FCD00E67BE5 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8621E31AA44FCD00E67BE5 /* LandingViewController.swift */; };
+		6A8621E61AA44FE700E67BE5 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8621E51AA44FE700E67BE5 /* ScannerViewController.swift */; };
+		6A8621E81AA450E300E67BE5 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8621E71AA450E300E67BE5 /* CartViewController.swift */; };
+		6A8621EA1AA4F52700E67BE5 /* itemTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A8621E91AA4F52700E67BE5 /* itemTableCell.xib */; };
+		6AD5AA131AA4F63300F19304 /* itemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD5AA121AA4F63300F19304 /* itemCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6A0A0D791A9D3D3600AFB549 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6A0A0D581A9D3D3600AFB549 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6A0A0D5F1A9D3D3600AFB549;
+			remoteInfo = KioskScanner;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6A0A0D601A9D3D3600AFB549 /* KioskScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KioskScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A0A0D641A9D3D3600AFB549 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A0A0D651A9D3D3600AFB549 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6A0A0D681A9D3D3600AFB549 /* KioskScanner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KioskScanner.xcdatamodel; sourceTree = "<group>"; };
+		6A0A0D6D1A9D3D3600AFB549 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6A0A0D6F1A9D3D3600AFB549 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		6A0A0D721A9D3D3600AFB549 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		6A0A0D781A9D3D3600AFB549 /* KioskScannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KioskScannerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A0A0D7D1A9D3D3600AFB549 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A0A0D7E1A9D3D3600AFB549 /* KioskScannerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KioskScannerTests.swift; sourceTree = "<group>"; };
+		6A2EB0371AA5B2F30089827C /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		6A8621E31AA44FCD00E67BE5 /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
+		6A8621E51AA44FE700E67BE5 /* ScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
+		6A8621E71AA450E300E67BE5 /* CartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		6A8621E91AA4F52700E67BE5 /* itemTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = itemTableCell.xib; sourceTree = "<group>"; };
+		6AD5AA121AA4F63300F19304 /* itemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = itemCell.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6A0A0D5D1A9D3D3600AFB549 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A0A0D751A9D3D3600AFB549 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6A0A0D571A9D3D3600AFB549 = {
+			isa = PBXGroup;
+			children = (
+				6A0A0D621A9D3D3600AFB549 /* KioskScanner */,
+				6A0A0D7B1A9D3D3600AFB549 /* KioskScannerTests */,
+				6A0A0D611A9D3D3600AFB549 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6A0A0D611A9D3D3600AFB549 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6A0A0D601A9D3D3600AFB549 /* KioskScanner.app */,
+				6A0A0D781A9D3D3600AFB549 /* KioskScannerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6A0A0D621A9D3D3600AFB549 /* KioskScanner */ = {
+			isa = PBXGroup;
+			children = (
+				6A8621E31AA44FCD00E67BE5 /* LandingViewController.swift */,
+				6A8621E51AA44FE700E67BE5 /* ScannerViewController.swift */,
+				6A0A0D651A9D3D3600AFB549 /* AppDelegate.swift */,
+				6A0A0D6C1A9D3D3600AFB549 /* Main.storyboard */,
+				6A8621E91AA4F52700E67BE5 /* itemTableCell.xib */,
+				6AD5AA121AA4F63300F19304 /* itemCell.swift */,
+				6A8621E71AA450E300E67BE5 /* CartViewController.swift */,
+				6A2EB0371AA5B2F30089827C /* Product.swift */,
+				6A0A0D6F1A9D3D3600AFB549 /* Images.xcassets */,
+				6A0A0D711A9D3D3600AFB549 /* LaunchScreen.xib */,
+				6A0A0D671A9D3D3600AFB549 /* KioskScanner.xcdatamodeld */,
+				6A0A0D631A9D3D3600AFB549 /* Supporting Files */,
+			);
+			path = KioskScanner;
+			sourceTree = "<group>";
+		};
+		6A0A0D631A9D3D3600AFB549 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6A0A0D641A9D3D3600AFB549 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6A0A0D7B1A9D3D3600AFB549 /* KioskScannerTests */ = {
+			isa = PBXGroup;
+			children = (
+				6A0A0D7E1A9D3D3600AFB549 /* KioskScannerTests.swift */,
+				6A0A0D7C1A9D3D3600AFB549 /* Supporting Files */,
+			);
+			path = KioskScannerTests;
+			sourceTree = "<group>";
+		};
+		6A0A0D7C1A9D3D3600AFB549 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6A0A0D7D1A9D3D3600AFB549 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6A0A0D5F1A9D3D3600AFB549 /* KioskScanner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A0A0D821A9D3D3600AFB549 /* Build configuration list for PBXNativeTarget "KioskScanner" */;
+			buildPhases = (
+				6A0A0D5C1A9D3D3600AFB549 /* Sources */,
+				6A0A0D5D1A9D3D3600AFB549 /* Frameworks */,
+				6A0A0D5E1A9D3D3600AFB549 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KioskScanner;
+			productName = KioskScanner;
+			productReference = 6A0A0D601A9D3D3600AFB549 /* KioskScanner.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6A0A0D771A9D3D3600AFB549 /* KioskScannerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A0A0D851A9D3D3600AFB549 /* Build configuration list for PBXNativeTarget "KioskScannerTests" */;
+			buildPhases = (
+				6A0A0D741A9D3D3600AFB549 /* Sources */,
+				6A0A0D751A9D3D3600AFB549 /* Frameworks */,
+				6A0A0D761A9D3D3600AFB549 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6A0A0D7A1A9D3D3600AFB549 /* PBXTargetDependency */,
+			);
+			name = KioskScannerTests;
+			productName = KioskScannerTests;
+			productReference = 6A0A0D781A9D3D3600AFB549 /* KioskScannerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6A0A0D581A9D3D3600AFB549 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = InfinitePeripherals;
+				TargetAttributes = {
+					6A0A0D5F1A9D3D3600AFB549 = {
+						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = 465RXD6KCR;
+					};
+					6A0A0D771A9D3D3600AFB549 = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = 6A0A0D5F1A9D3D3600AFB549;
+					};
+				};
+			};
+			buildConfigurationList = 6A0A0D5B1A9D3D3600AFB549 /* Build configuration list for PBXProject "KioskScanner" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6A0A0D571A9D3D3600AFB549;
+			productRefGroup = 6A0A0D611A9D3D3600AFB549 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6A0A0D5F1A9D3D3600AFB549 /* KioskScanner */,
+				6A0A0D771A9D3D3600AFB549 /* KioskScannerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6A0A0D5E1A9D3D3600AFB549 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A0A0D6E1A9D3D3600AFB549 /* Main.storyboard in Resources */,
+				6A8621EA1AA4F52700E67BE5 /* itemTableCell.xib in Resources */,
+				6A0A0D731A9D3D3600AFB549 /* LaunchScreen.xib in Resources */,
+				6A0A0D701A9D3D3600AFB549 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A0A0D761A9D3D3600AFB549 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6A0A0D5C1A9D3D3600AFB549 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A0A0D691A9D3D3600AFB549 /* KioskScanner.xcdatamodeld in Sources */,
+				6A8621E41AA44FCD00E67BE5 /* LandingViewController.swift in Sources */,
+				6A8621E81AA450E300E67BE5 /* CartViewController.swift in Sources */,
+				6A0A0D661A9D3D3600AFB549 /* AppDelegate.swift in Sources */,
+				6AD5AA131AA4F63300F19304 /* itemCell.swift in Sources */,
+				6A8621E61AA44FE700E67BE5 /* ScannerViewController.swift in Sources */,
+				6A2EB0381AA5B2F30089827C /* Product.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A0A0D741A9D3D3600AFB549 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A0A0D7F1A9D3D3600AFB549 /* KioskScannerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6A0A0D7A1A9D3D3600AFB549 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6A0A0D5F1A9D3D3600AFB549 /* KioskScanner */;
+			targetProxy = 6A0A0D791A9D3D3600AFB549 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6A0A0D6C1A9D3D3600AFB549 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6A0A0D6D1A9D3D3600AFB549 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6A0A0D711A9D3D3600AFB549 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6A0A0D721A9D3D3600AFB549 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6A0A0D801A9D3D3600AFB549 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		6A0A0D811A9D3D3600AFB549 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6A0A0D831A9D3D3600AFB549 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = KioskScanner/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		6A0A0D841A9D3D3600AFB549 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = KioskScanner/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+		6A0A0D861A9D3D3600AFB549 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = KioskScannerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KioskScanner.app/KioskScanner";
+			};
+			name = Debug;
+		};
+		6A0A0D871A9D3D3600AFB549 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = KioskScannerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KioskScanner.app/KioskScanner";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6A0A0D5B1A9D3D3600AFB549 /* Build configuration list for PBXProject "KioskScanner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A0A0D801A9D3D3600AFB549 /* Debug */,
+				6A0A0D811A9D3D3600AFB549 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6A0A0D821A9D3D3600AFB549 /* Build configuration list for PBXNativeTarget "KioskScanner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A0A0D831A9D3D3600AFB549 /* Debug */,
+				6A0A0D841A9D3D3600AFB549 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6A0A0D851A9D3D3600AFB549 /* Build configuration list for PBXNativeTarget "KioskScannerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A0A0D861A9D3D3600AFB549 /* Debug */,
+				6A0A0D871A9D3D3600AFB549 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6A0A0D671A9D3D3600AFB549 /* KioskScanner.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6A0A0D681A9D3D3600AFB549 /* KioskScanner.xcdatamodel */,
+			);
+			currentVersion = 6A0A0D681A9D3D3600AFB549 /* KioskScanner.xcdatamodel */;
+			path = KioskScanner.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 6A0A0D581A9D3D3600AFB549 /* Project object */;
+}
