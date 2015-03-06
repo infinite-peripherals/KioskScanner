@@ -6,29 +6,33 @@
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>9B5BD1C8-C77E-4492-94C1-116F07D3ADBF</string>
+	<key>IDESourceControlProjectName</key>
+	<string>KioskScanner</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>2FAC6F4DE40510068D9E8AB990332AACC70A2BE7</key>
+		<key>5317F42BB7BBC714DA00A674C64CC8566540D109</key>
 		<string>https://github.com/infinite-peripherals/KioskScanner.git</string>
 	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>KioskScanner.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>2FAC6F4DE40510068D9E8AB990332AACC70A2BE7</key>
-		<string>KioskScanner/</string>
+		<key>5317F42BB7BBC714DA00A674C64CC8566540D109</key>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/infinite-peripherals/KioskScanner.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>2FAC6F4DE40510068D9E8AB990332AACC70A2BE7</string>
+	<string>5317F42BB7BBC714DA00A674C64CC8566540D109</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>2FAC6F4DE40510068D9E8AB990332AACC70A2BE7</string>
+			<string>5317F42BB7BBC714DA00A674C64CC8566540D109</string>
 			<key>IDESourceControlWCCName</key>
 			<string>KioskScanner</string>
 		</dict>
