@@ -8,7 +8,7 @@
         <!--Landing View Controller-->
         <scene sceneID="VgR-11-pNA">
             <objects>
-                <viewController id="C9u-G7-zCT" customClass="LandingViewController" customModule="KioskScanner" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController wantsFullScreenLayout="YES" id="C9u-G7-zCT" customClass="LandingViewController" customModule="KioskScanner" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Wi4-1t-3zf"/>
                         <viewControllerLayoutGuide type="bottom" id="5cf-zW-kfN"/>
@@ -18,10 +18,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e2i-oO-2Ry">
-                                <rect key="frame" x="245" y="278" width="110" height="44"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <state key="normal" title="Checkout">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="172" y="172" width="256" height="256"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="50"/>
+                                <state key="normal" title="Checkout" backgroundImage="landingCircle">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="tJr-Nz-fi8" kind="show" id="FHR-Qe-6Sk"/>
@@ -139,4 +140,7 @@
             <point key="canvasLocation" x="2382" y="414"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="landingCircle" width="256" height="256"/>
+    </resources>
 </document>
