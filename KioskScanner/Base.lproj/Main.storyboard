@@ -21,7 +21,7 @@
                                     <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="tJr-Nz-fi8" kind="modal" id="FHR-Qe-6Sk"/>
+                                    <segue destination="tJr-Nz-fi8" kind="modal" id="BdI-3s-hP2"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -43,6 +43,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Oi2-Nj-0gF"/>
                     <connections>
                         <segue destination="zHP-wd-JqA" kind="modal" identifier="scanned" id="0Ol-6V-4nz"/>
                     </connections>
@@ -185,7 +186,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="MZz-zS-3Xd">
-                                <rect key="frame" x="186" y="75" width="652" height="618"/>
+                                <rect key="frame" x="186" y="65" width="652" height="567"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -202,11 +203,19 @@
                                     <outlet property="delegate" destination="hGx-vm-IFc" id="1ph-mq-7JX"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="k9w-Bw-Oph">
+                                <rect key="frame" x="450" y="655" width="124" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="cartTableView" destination="MZz-zS-3Xd" id="LiO-V8-mAD"/>
+                        <outlet property="totalLabel" destination="k9w-Bw-Oph" id="7uh-zu-pmq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XGt-Zn-aLi" userLabel="First Responder" sceneMemberID="firstResponder"/>

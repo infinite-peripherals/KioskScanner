@@ -17,6 +17,8 @@ class EditCartViewController: UIViewController, UITableViewDelegate, UITableView
     var cartString: String = ""
     var cartList: Array<AnyObject> = []
     
+    @IBOutlet weak var totalLabel: UILabel!
+    
     var theCart = [NSManagedObject]()
     
     var productDatabase = [Product(name: "Water bottle", quantity: 1, UPC: "123456789", price: 2.49, imageReference: "water-bottle"), Product(name: "Camera", quantity: 1, UPC: "987654321", price: 199.99, imageReference: "camera"), Product(name: "Play Station 3", quantity: 1, UPC: "113456789", price: 249.99, imageReference: "ps3"), Product(name: "HD 650", quantity: 1, UPC: "223456789", price: 349.99, imageReference: "hd650"), Product(name: "Samsung 850 Pro SSD", quantity: 1, UPC: "123456788", price: 189.99, imageReference: "850pro")]
@@ -79,13 +81,20 @@ class EditCartViewController: UIViewController, UITableViewDelegate, UITableView
         var cell:editTableCell = cartTableView.dequeueReusableCellWithIdentifier("cell") as editTableCell
         let item = theCart[indexPath.row]
         var price: Double = 0.0
-        
+        var quantity: Int
         cell.itemName.text = item.valueForKey("name") as String?
         price = item.valueForKey("price") as Double!
         cell.itemPrice.text = "$\(price)"
         var imageName = item.valueForKey("image") as String?
         cell.itemImage.image = UIImage(named: imageName!)
+        quantity = item.valueForKey("quantity") as Int!
+        cell.itemQuantity.text = "\(quantity)"
+        var amount = price * Double(item.valueForKey("quantity") as Int!)
+        cell.itemAmount.text = "$\(amount)"
+        
         cell.deleteButton.addTarget(self, action:Selector("deletePressed:"), forControlEvents: UIControlEvents.TouchUpInside)
+        cell.increaseButton.addTarget(self, action:Selector("increasePressed:"), forControlEvents: UIControlEvents.TouchUpInside)
+        cell.decreaseButton.addTarget(self, action:Selector("decreasePressed:"), forControlEvents: UIControlEvents.TouchUpInside)
         //cell.itemQuantity.text = item.valueForKey("quantity") as String?
         return cell
         
@@ -183,13 +192,123 @@ class EditCartViewController: UIViewController, UITableViewDelegate, UITableView
         
         var totalPrice: Double = 0.0
         for (var i=0; i<cartList.count; i++){
-            totalPrice += cartList[i].valueForKey("price") as Double!
+            var currentQuantity = cartList[i].valueForKey("quantity") as Int!
+            
+            totalPrice += cartList[i].valueForKey("price") as Double! * Double(currentQuantity)
         }
         
-        //self.totalLabel.text = "Total: $\(totalPrice)"
+        
+        self.totalLabel.text = "Total: $\(totalPrice)"
         
         var error: NSError? = nil
         if !context.save(&error){
+            abort()
+        }
+        
+    }
+    
+    
+    
+    func increasePressed(sender: UIButton){
+        
+        
+        let pointInTable: CGPoint = sender.convertPoint(sender.bounds.origin, toView: cartTableView)
+        let indexPath = cartTableView.indexPathForRowAtPoint(pointInTable)
+        
+        let currentCell = cartTableView.cellForRowAtIndexPath(indexPath!) as editTableCell
+        
+        let item = theCart[indexPath!.row]
+        
+        
+        let appDel = UIApplication.sharedApplication().delegate as AppDelegate
+        let managedContext:NSManagedObjectContext = appDel.managedObjectContext!
+        
+        
+        var fetchRequest = NSFetchRequest(entityName: "Cart")
+        fetchRequest.predicate = NSPredicate(format: "name = %@", currentCell.itemName.text!)
+        
+        if let fetchResults = managedContext.executeFetchRequest(fetchRequest, error: nil) as? [NSManagedObject] {
+            if fetchResults.count != 0{
+                
+                var managedObject = fetchResults[0]
+                var newQuantity = fetchResults[0].valueForKey("quantity") as Int + 1
+                managedObject.setValue(newQuantity, forKey: "quantity")
+                managedContext.save(nil)
+                self.cartTableView.beginUpdates()
+                
+                currentCell.itemQuantity.text = "\(newQuantity)"
+                var currentPrice = fetchResults[0].valueForKey("price") as Double
+                currentCell.itemAmount.text = "\(Double(newQuantity) * currentPrice)"
+                self.cartTableView.endUpdates()
+                
+                
+            }
+            
+        }
+        
+        var totalPrice: Double = 0.0
+        for (var i=0; i<cartList.count; i++){
+            var currentQuantity = cartList[i].valueForKey("quantity") as Int!
+            totalPrice += cartList[i].valueForKey("price") as Double! * Double(currentQuantity)
+        }
+        
+        self.totalLabel.text = "Total: $\(totalPrice)"
+        
+        var error: NSError? = nil
+        if !managedContext.save(&error){
+            abort()
+        }
+        
+    }
+    
+    
+    func decreasePressed(sender: UIButton){
+        
+        
+        let pointInTable: CGPoint = sender.convertPoint(sender.bounds.origin, toView: cartTableView)
+        let indexPath = cartTableView.indexPathForRowAtPoint(pointInTable)
+        
+        let currentCell = cartTableView.cellForRowAtIndexPath(indexPath!) as editTableCell
+        
+        let item = theCart[indexPath!.row]
+        
+        
+        let appDel = UIApplication.sharedApplication().delegate as AppDelegate
+        let managedContext:NSManagedObjectContext = appDel.managedObjectContext!
+        
+        
+        var fetchRequest = NSFetchRequest(entityName: "Cart")
+        fetchRequest.predicate = NSPredicate(format: "name = %@", currentCell.itemName.text!)
+        
+        if let fetchResults = managedContext.executeFetchRequest(fetchRequest, error: nil) as? [NSManagedObject] {
+            if fetchResults.count != 0 && fetchResults[0].valueForKey("quantity") as Int > 1 {
+                
+                var managedObject = fetchResults[0]
+                var newQuantity = fetchResults[0].valueForKey("quantity") as Int - 1
+                managedObject.setValue(newQuantity, forKey: "quantity")
+                managedContext.save(nil)
+                self.cartTableView.beginUpdates()
+                
+                currentCell.itemQuantity.text = "\(newQuantity)"
+                var currentPrice = fetchResults[0].valueForKey("price") as Double
+                currentCell.itemAmount.text = "\(Double(newQuantity) * currentPrice)"
+                self.cartTableView.endUpdates()
+                
+                
+            }
+            
+        }
+        
+        var totalPrice: Double = 0.0
+        for (var i=0; i<cartList.count; i++){
+            var currentQuantity = cartList[i].valueForKey("quantity") as Int!
+            totalPrice += cartList[i].valueForKey("price") as Double! * Double(currentQuantity)
+        }
+        
+        self.totalLabel.text = "Total: $\(totalPrice)"
+        
+        var error: NSError? = nil
+        if !managedContext.save(&error){
             abort()
         }
         

@@ -56,7 +56,9 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         var totalPrice: Double = 0.0
         for (var i=0; i<cartList.count; i++){
-            totalPrice += cartList[i].valueForKey("price") as Double!
+            var currentQuantity = cartList[i].valueForKey("quantity") as Int!
+            
+            totalPrice += cartList[i].valueForKey("price") as Double! * Double(currentQuantity)
         }
         
         self.totalLabel.text = "Total: $\(totalPrice)"
@@ -113,14 +115,17 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         var cell:itemCell = cartTableView.dequeueReusableCellWithIdentifier("cell") as itemCell
         let item = theCart[indexPath.row]
         var price: Double = 0.0
+        var quantity: Int = 0
         
         cell.itemName.text = item.valueForKey("name") as String?
         price = item.valueForKey("price") as Double!
         cell.itemPrice.text = "$\(price)"
         var imageName = item.valueForKey("image") as String?
         cell.itemImage.image = UIImage(named: imageName!)
-        
-        //cell.itemQuantity.text = item.valueForKey("quantity") as String?
+        quantity = item.valueForKey("quantity") as Int!
+        cell.itemQuantity.text = "\(quantity)"
+        var amount = price * Double(item.valueForKey("quantity") as Int!)
+        cell.itemAmount.text = "$\(amount)"
         return cell
         
     }
@@ -137,6 +142,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     func saveItem(toAdd: Product) {
+        
         //1
         let appDelegate =
         UIApplication.sharedApplication().delegate as AppDelegate
@@ -148,23 +154,48 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
             inManagedObjectContext:
             managedContext)
         
-        let item = NSManagedObject(entity: entity!,
-            insertIntoManagedObjectContext:managedContext)
         
-        //3
-        item.setValue(toAdd.name, forKey: "name")
-        item.setValue(toAdd.price, forKey: "price")
-        item.setValue(toAdd.quantity, forKey: "quantity")
-        item.setValue(toAdd.imageReference, forKey: "image")
-        item.setValue(toAdd.UPC, forKey: "upc")
         
-        //4
-        var error: NSError?
-        if !managedContext.save(&error) {
-            println("Could not save \(error), \(error?.userInfo)")
+        // Search and update quantity if it an item exists in the database
+        
+        var fetchRequest = NSFetchRequest(entityName: "Cart")
+        fetchRequest.predicate = NSPredicate(format: "upc = %@", toAdd.UPC)
+        
+        if let fetchResults = managedContext.executeFetchRequest(fetchRequest, error: nil) as? [NSManagedObject] {
+            if fetchResults.count != 0{
+                
+                var managedObject = fetchResults[0]
+                var newQuantity = fetchResults[0].valueForKey("quantity") as Int + 1
+                managedObject.setValue(newQuantity, forKey: "quantity")
+                
+                managedContext.save(nil)
+            }
+            
+            
+            if fetchResults.count == 0{
+                let item = NSManagedObject(entity: entity!,
+                    insertIntoManagedObjectContext:managedContext)
+                
+                //3
+                item.setValue(toAdd.name, forKey: "name")
+                item.setValue(toAdd.price, forKey: "price")
+                item.setValue(1, forKey: "quantity")
+                item.setValue(toAdd.imageReference, forKey: "image")
+                item.setValue(toAdd.UPC, forKey: "upc")
+                
+                //4
+                var error: NSError?
+                if !managedContext.save(&error) {
+                    println("Could not save \(error), \(error?.userInfo)")
+                }
+                //5
+                theCart.append(item)
+            }
         }
-        //5
-        theCart.append(item)
+        
+        
+        
+
     }
     
     

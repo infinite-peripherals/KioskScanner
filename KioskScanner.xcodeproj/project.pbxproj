@@ -15,6 +15,9 @@
 		6A0A0D7F1A9D3D3600AFB549 /* KioskScannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0A0D7E1A9D3D3600AFB549 /* KioskScannerTests.swift */; };
 		6A271EC01AB523B200469BB8 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A271EBF1AB523B200469BB8 /* PaymentViewController.swift */; };
 		6A2EB0381AA5B2F30089827C /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2EB0371AA5B2F30089827C /* Product.swift */; };
+		6A5BF2EA1AB888E80038A235 /* libdtdev.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A5BF2E91AB888E80038A235 /* libdtdev.a */; };
+		6A5BF2EC1AB889A80038A235 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A5BF2EB1AB889A80038A235 /* ExternalAccessory.framework */; };
+		6A5BF2EE1AB889E50038A235 /* SwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5BF2ED1AB889E50038A235 /* SwiftViewController.swift */; };
 		6A8621E41AA44FCD00E67BE5 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8621E31AA44FCD00E67BE5 /* LandingViewController.swift */; };
 		6A8621E61AA44FE700E67BE5 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8621E51AA44FE700E67BE5 /* ScannerViewController.swift */; };
 		6A8621E81AA450E300E67BE5 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8621E71AA450E300E67BE5 /* CartViewController.swift */; };
@@ -48,6 +51,13 @@
 		6A0A0D7E1A9D3D3600AFB549 /* KioskScannerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KioskScannerTests.swift; sourceTree = "<group>"; };
 		6A271EBF1AB523B200469BB8 /* PaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		6A2EB0371AA5B2F30089827C /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		6A5BF2E61AB888E80038A235 /* DTDevices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTDevices.h; sourceTree = "<group>"; };
+		6A5BF2E71AB888E80038A235 /* EMVPrivateTags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMVPrivateTags.h; sourceTree = "<group>"; };
+		6A5BF2E81AB888E80038A235 /* EMVTags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMVTags.h; sourceTree = "<group>"; };
+		6A5BF2E91AB888E80038A235 /* libdtdev.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libdtdev.a; sourceTree = "<group>"; };
+		6A5BF2EB1AB889A80038A235 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
+		6A5BF2ED1AB889E50038A235 /* SwiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftViewController.swift; sourceTree = "<group>"; };
+		6A5BF2EF1AB88AAC0038A235 /* KioskScanner-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KioskScanner-Bridging-Header.h"; sourceTree = "<group>"; };
 		6A8621E31AA44FCD00E67BE5 /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		6A8621E51AA44FE700E67BE5 /* ScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		6A8621E71AA450E300E67BE5 /* CartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +73,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A5BF2EC1AB889A80038A235 /* ExternalAccessory.framework in Frameworks */,
+				6A5BF2EA1AB888E80038A235 /* libdtdev.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +91,7 @@
 		6A0A0D571A9D3D3600AFB549 = {
 			isa = PBXGroup;
 			children = (
+				6A5BF2EB1AB889A80038A235 /* ExternalAccessory.framework */,
 				6A0A0D621A9D3D3600AFB549 /* KioskScanner */,
 				6A0A0D7B1A9D3D3600AFB549 /* KioskScannerTests */,
 				6A0A0D611A9D3D3600AFB549 /* Products */,
@@ -97,10 +110,15 @@
 		6A0A0D621A9D3D3600AFB549 /* KioskScanner */ = {
 			isa = PBXGroup;
 			children = (
+				6A5BF2E61AB888E80038A235 /* DTDevices.h */,
+				6A5BF2E71AB888E80038A235 /* EMVPrivateTags.h */,
+				6A5BF2E81AB888E80038A235 /* EMVTags.h */,
+				6A5BF2E91AB888E80038A235 /* libdtdev.a */,
 				6A8621E31AA44FCD00E67BE5 /* LandingViewController.swift */,
 				6A8621E51AA44FE700E67BE5 /* ScannerViewController.swift */,
 				6A0A0D651A9D3D3600AFB549 /* AppDelegate.swift */,
 				6A0A0D6C1A9D3D3600AFB549 /* Main.storyboard */,
+				6A5BF2ED1AB889E50038A235 /* SwiftViewController.swift */,
 				6AB38F441AB7D685007ACA44 /* EditCartViewController.swift */,
 				6A271EBF1AB523B200469BB8 /* PaymentViewController.swift */,
 				6A8621E91AA4F52700E67BE5 /* itemTableCell.xib */,
@@ -111,6 +129,7 @@
 				6A2EB0371AA5B2F30089827C /* Product.swift */,
 				6A0A0D6F1A9D3D3600AFB549 /* Images.xcassets */,
 				6A0A0D711A9D3D3600AFB549 /* LaunchScreen.xib */,
+				6A5BF2EF1AB88AAC0038A235 /* KioskScanner-Bridging-Header.h */,
 				6A0A0D671A9D3D3600AFB549 /* KioskScanner.xcdatamodeld */,
 				6A0A0D631A9D3D3600AFB549 /* Supporting Files */,
 			);
@@ -191,7 +210,11 @@
 				TargetAttributes = {
 					6A0A0D5F1A9D3D3600AFB549 = {
 						CreatedOnToolsVersion = 6.1;
-						DevelopmentTeam = 465RXD6KCR;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					6A0A0D771A9D3D3600AFB549 = {
 						CreatedOnToolsVersion = 6.1;
@@ -247,6 +270,7 @@
 			files = (
 				6A0A0D691A9D3D3600AFB549 /* KioskScanner.xcdatamodeld in Sources */,
 				6A8621E41AA44FCD00E67BE5 /* LandingViewController.swift in Sources */,
+				6A5BF2EE1AB889E50038A235 /* SwiftViewController.swift in Sources */,
 				6AB38F471AB7D755007ACA44 /* editTableCell.swift in Sources */,
 				6A8621E81AA450E300E67BE5 /* CartViewController.swift in Sources */,
 				6A271EC01AB523B200469BB8 /* PaymentViewController.swift in Sources */,
@@ -384,8 +408,13 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = KioskScanner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/KioskScanner",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "KioskScanner/KioskScanner-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -398,8 +427,13 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = KioskScanner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/KioskScanner",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "KioskScanner/KioskScanner-Bridging-Header.h";
 			};
 			name = Release;
 		};

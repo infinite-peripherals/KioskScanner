@@ -29,11 +29,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KioskScanner/EditCartViewController.swift"
-            timestampString = "448272137.457224"
+            timestampString = "448316333.685014"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "177"
-            endingLineNumber = "177"
+            startingLineNumber = "186"
+            endingLineNumber = "186"
             landmarkName = "deletePressed(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -45,12 +45,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KioskScanner/EditCartViewController.swift"
-            timestampString = "448272137.457224"
+            timestampString = "448316333.685014"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "180"
-            endingLineNumber = "180"
+            startingLineNumber = "189"
+            endingLineNumber = "189"
             landmarkName = "deletePressed(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KioskScanner/SwiftViewController.swift"
+            timestampString = "448312486.892866"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "connectionState(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
