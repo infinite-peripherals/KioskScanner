@@ -16,7 +16,8 @@ class editTableCell: UITableViewCell {
     @IBOutlet weak var itemAmount: UILabel!
     @IBOutlet weak var itemName: UILabel!
     
-    
+    @IBOutlet weak var increaseButton: UIButton!
+    @IBOutlet weak var decreaseButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
     
     

@@ -16,6 +16,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     var cartString: String = ""
     var cartList: Array<AnyObject> = []
     
+    @IBOutlet weak var totalLabel: UILabel!
     var theCart = [NSManagedObject]()
     
     var productDatabase = [Product(name: "Water bottle", quantity: 1, UPC: "123456789", price: 2.49, imageReference: "water-bottle"), Product(name: "Camera", quantity: 1, UPC: "987654321", price: 199.99, imageReference: "camera"), Product(name: "Play Station 3", quantity: 1, UPC: "113456789", price: 249.99, imageReference: "ps3"), Product(name: "HD 650", quantity: 1, UPC: "223456789", price: 349.99, imageReference: "hd650"), Product(name: "Samsung 850 Pro SSD", quantity: 1, UPC: "123456788", price: 189.99, imageReference: "850pro")]
@@ -51,7 +52,14 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         cartList = context.executeFetchRequest(request, error: nil)!
         
-        println("cartList \(cartList.count)")
+       // println("cartList \(cartList.count)")
+        
+        var totalPrice: Double = 0.0
+        for (var i=0; i<cartList.count; i++){
+            totalPrice += cartList[i].valueForKey("price") as Double!
+        }
+        
+        self.totalLabel.text = "Total: $\(totalPrice)"
         
         self.cartTableView.separatorStyle = UITableViewCellSeparatorStyle.None;
         //self.cartTableView.editing = true;
@@ -124,7 +132,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 147
+        return 192
     }
     
     
