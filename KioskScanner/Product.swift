@@ -36,13 +36,4 @@ class Product{
     }
     
     
-    func createProduct(name: String, quantity: Int, UPC: String, price: Double){
-        self.name = name
-        self.quantity = quantity
-        self.UPC = UPC
-        self.price = price
-        
-    }
-    
-    
 }

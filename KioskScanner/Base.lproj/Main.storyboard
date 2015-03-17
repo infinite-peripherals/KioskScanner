@@ -74,7 +74,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="AM9-sK-xkr">
-                                <rect key="frame" x="0.0" y="28" width="600" height="479"/>
+                                <rect key="frame" x="0.0" y="69" width="414" height="436"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="EGb-7Y-Ncy" customClass="itemCell" customModule="KioskScanner" customModuleProvider="target">
@@ -91,9 +91,9 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MW2-0c-Mq6">
-                                <rect key="frame" x="236" y="539" width="129" height="41"/>
+                                <rect key="frame" x="455" y="551" width="40" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Finish &amp; Pay">
+                                <state key="normal" title="Pay">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -101,15 +101,36 @@
                                     <segue destination="pGL-vv-AEN" kind="show" id="1Vl-hE-IMA"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Cart" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="poA-5V-sHL">
+                                <rect key="frame" x="149" y="28" width="72" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zjA-KF-iQQ">
+                                <rect key="frame" x="80" y="551" width="81" height="30"/>
+                                <state key="normal" title="Modify Cart">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="hGx-vm-IFc" kind="show" id="Kfd-DN-EOG"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1hW-y8-t7n">
+                                <rect key="frame" x="415" y="20" width="10" height="580"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="MW2-0c-Mq6" firstAttribute="top" secondItem="AM9-sK-xkr" secondAttribute="bottom" constant="32" id="1nL-wY-9Xv"/>
-                            <constraint firstItem="MW2-0c-Mq6" firstAttribute="leading" secondItem="ai2-rh-Psy" secondAttribute="leadingMargin" constant="220" id="UHi-Yw-dbk"/>
-                            <constraint firstItem="MW2-0c-Mq6" firstAttribute="bottom" secondItem="1g9-1V-AAG" secondAttribute="top" constant="-20" id="aVz-cp-Yfb"/>
-                            <constraint firstItem="AM9-sK-xkr" firstAttribute="top" secondItem="0IP-ld-gmT" secondAttribute="bottom" constant="8" symbolic="YES" id="cfR-5u-sSd"/>
-                            <constraint firstAttribute="trailing" secondItem="AM9-sK-xkr" secondAttribute="trailing" id="gqY-av-lgg"/>
-                            <constraint firstItem="MW2-0c-Mq6" firstAttribute="centerX" secondItem="AM9-sK-xkr" secondAttribute="centerX" id="tIr-pM-pWi"/>
+                            <constraint firstItem="MW2-0c-Mq6" firstAttribute="top" secondItem="AM9-sK-xkr" secondAttribute="bottom" constant="46" id="1nL-wY-9Xv"/>
+                            <constraint firstItem="zjA-KF-iQQ" firstAttribute="leading" secondItem="ai2-rh-Psy" secondAttribute="leadingMargin" constant="64" id="LeS-ve-16T"/>
+                            <constraint firstItem="MW2-0c-Mq6" firstAttribute="leading" secondItem="ai2-rh-Psy" secondAttribute="leadingMargin" constant="439" id="UHi-Yw-dbk"/>
+                            <constraint firstItem="MW2-0c-Mq6" firstAttribute="bottom" secondItem="1g9-1V-AAG" secondAttribute="top" constant="-8" id="aVz-cp-Yfb"/>
+                            <constraint firstItem="AM9-sK-xkr" firstAttribute="top" secondItem="0IP-ld-gmT" secondAttribute="bottom" constant="49" id="cfR-5u-sSd"/>
+                            <constraint firstAttribute="trailing" secondItem="AM9-sK-xkr" secondAttribute="trailing" constant="186" id="gqY-av-lgg"/>
+                            <constraint firstItem="zjA-KF-iQQ" firstAttribute="top" secondItem="AM9-sK-xkr" secondAttribute="bottom" constant="46" id="oB3-a0-OBr"/>
+                            <constraint firstItem="MW2-0c-Mq6" firstAttribute="centerX" secondItem="AM9-sK-xkr" secondAttribute="centerX" constant="268" id="tIr-pM-pWi"/>
+                            <constraint firstItem="1hW-y8-t7n" firstAttribute="leading" secondItem="AM9-sK-xkr" secondAttribute="trailing" constant="1" id="vbq-ZR-1s1"/>
                             <constraint firstItem="AM9-sK-xkr" firstAttribute="leading" secondItem="ai2-rh-Psy" secondAttribute="leading" id="zpm-zY-6IV"/>
                         </constraints>
                     </view>
@@ -121,10 +142,52 @@
             </objects>
             <point key="canvasLocation" x="1718" y="414"/>
         </scene>
-        <!--View Controller-->
+        <!--Edit Cart View Controller-->
+        <scene sceneID="sfC-07-SUY">
+            <objects>
+                <viewController id="hGx-vm-IFc" customClass="EditCartViewController" customModule="KioskScanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yJh-Lz-4O7"/>
+                        <viewControllerLayoutGuide type="bottom" id="1fj-sI-Fgw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lHf-5P-twU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vRZ-hk-qhx">
+                                <rect key="frame" x="286" y="558" width="37" height="30"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="MZz-zS-3Xd">
+                                <rect key="frame" x="-3" y="28" width="606" height="488"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell2" id="4xj-39-7gv" customClass="editTableCell" customModule="KioskScanner" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="606" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4xj-39-7gv" id="kge-gc-v4F">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="cartTableView" destination="MZz-zS-3Xd" id="LiO-V8-mAD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XGt-Zn-aLi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2373" y="414"/>
+        </scene>
+        <!--Payment View Controller-->
         <scene sceneID="Dl3-Zc-vXi">
             <objects>
-                <viewController id="pGL-vv-AEN" sceneMemberID="viewController">
+                <viewController id="pGL-vv-AEN" customClass="PaymentViewController" customModule="KioskScanner" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="99J-ql-4Io"/>
                         <viewControllerLayoutGuide type="bottom" id="G6e-xF-StP"/>
@@ -137,7 +200,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kVe-5i-BUt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2382" y="414"/>
+            <point key="canvasLocation" x="2466" y="1340"/>
         </scene>
     </scenes>
     <resources>

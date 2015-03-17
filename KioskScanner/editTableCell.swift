@@ -1,22 +1,20 @@
 //
-//  itemCell.swift
+//  editTableCell.swift
 //  KioskScanner
 //
-//  Created by Kenny Pham on 3/2/15.
+//  Created by Kenny Pham on 3/16/15.
 //  Copyright (c) 2015 InfinitePeripherals. All rights reserved.
 //
 
 import UIKit
 
-class itemCell: UITableViewCell {
+class editTableCell: UITableViewCell {
 
-    
-    @IBOutlet weak var itemName: UILabel!
     @IBOutlet weak var itemImage: UIImageView!
-    @IBOutlet weak var itemPrice: UILabel!
     @IBOutlet weak var itemQuantity: UILabel!
+    @IBOutlet weak var itemPrice: UILabel!
     @IBOutlet weak var itemAmount: UILabel!
-    
+    @IBOutlet weak var itemName: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

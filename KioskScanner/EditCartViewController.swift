@@ -1,8 +1,8 @@
 //
-//  CartViewController.swift
+//  EditCartViewController.swift
 //  KioskScanner
 //
-//  Created by Kenny Pham on 3/2/15.
+//  Created by Kenny Pham on 3/16/15.
 //  Copyright (c) 2015 InfinitePeripherals. All rights reserved.
 //
 
@@ -10,9 +10,10 @@ import UIKit
 import Foundation
 import CoreData
 
-class CartViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class EditCartViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var cartTableView: UITableView!
+    
     var cartString: String = ""
     var cartList: Array<AnyObject> = []
     
@@ -24,10 +25,8 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         
         
-        println("viewDidload: \(self.cartString)")
-        
         var nib = UINib(nibName: "itemTableCell", bundle: nil)
-        cartTableView.registerNib(nib, forCellReuseIdentifier: "cell")
+        cartTableView.registerNib(nib, forCellReuseIdentifier: "cell2")
         
         var itemArray = cartString.componentsSeparatedByString("!")
         
@@ -56,36 +55,11 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.cartTableView.separatorStyle = UITableViewCellSeparatorStyle.None;
         //self.cartTableView.editing = true;
         self.cartTableView.reloadData()
-        
+
+        // Do any additional setup after loading the view.
     }
     
     
-    @IBAction func finishPressed(sender: UIButton) {
-        let appDel = UIApplication.sharedApplication().delegate as AppDelegate
-        let context:NSManagedObjectContext = appDel.managedObjectContext!
-        
-        let request = NSFetchRequest(entityName: "Cart")
-        
-        cartList = context.executeFetchRequest(request, error: nil)!
-        
-        //self.totalLabel.text = "Total: $0.00"
-        
-        if let tv = cartTableView {
-            
-            var bas: NSManagedObject!
-            
-            for bas: AnyObject in cartList
-            {
-                context.deleteObject(bas as NSManagedObject)
-            }
-            
-            cartList.removeAll(keepCapacity: false)
-            tv.reloadData()
-            context.save(nil)
-            
-        }
-        
-    }
     
     
     func tableView(tableView: UITableView!, canEditRowAtIndexPath indexPath: NSIndexPath!) -> Bool {
@@ -185,6 +159,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
             println("Could not fetch \(error), \(error!.userInfo)")
         }
     }
+    
 
 
     override func didReceiveMemoryWarning() {
