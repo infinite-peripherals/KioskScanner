@@ -25,8 +25,8 @@ class EditCartViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
         
         
-        var nib = UINib(nibName: "itemTableCell", bundle: nil)
-        cartTableView.registerNib(nib, forCellReuseIdentifier: "cell2")
+        var nib = UINib(nibName: "editCell", bundle: nil)
+        cartTableView.registerNib(nib, forCellReuseIdentifier: "cell")
         
         var itemArray = cartString.componentsSeparatedByString("!")
         
@@ -76,7 +76,7 @@ class EditCartViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(cartTableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        var cell:itemCell = cartTableView.dequeueReusableCellWithIdentifier("cell") as itemCell
+        var cell:editTableCell = cartTableView.dequeueReusableCellWithIdentifier("cell") as editTableCell
         let item = theCart[indexPath.row]
         var price: Double = 0.0
         
@@ -86,7 +86,7 @@ class EditCartViewController: UIViewController, UITableViewDelegate, UITableView
         var imageName = item.valueForKey("image") as String?
         cell.itemImage.image = UIImage(named: imageName!)
         
-        cell.itemQuantity.text = item.valueForKey("quantity") as String?
+        //cell.itemQuantity.text = item.valueForKey("quantity") as String?
         return cell
         
     }

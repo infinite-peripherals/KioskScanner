@@ -159,12 +159,15 @@
                                 <state key="normal" title="Done">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="zHP-wd-JqA" kind="show" id="v38-zg-qEQ"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="MZz-zS-3Xd">
                                 <rect key="frame" x="-3" y="28" width="606" height="488"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell2" id="4xj-39-7gv" customClass="editTableCell" customModule="KioskScanner" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="4xj-39-7gv" customClass="editTableCell" customModule="KioskScanner" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="606" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4xj-39-7gv" id="kge-gc-v4F">
@@ -172,6 +175,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="hGx-vm-IFc" id="GgM-Ug-Wat"/>
+                                    <outlet property="delegate" destination="hGx-vm-IFc" id="1ph-mq-7JX"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -206,4 +213,7 @@
     <resources>
         <image name="landingCircle" width="256" height="256"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="v38-zg-qEQ"/>
+    </inferredMetricsTieBreakers>
 </document>

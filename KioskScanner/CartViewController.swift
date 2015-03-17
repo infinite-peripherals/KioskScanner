@@ -112,7 +112,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         var imageName = item.valueForKey("image") as String?
         cell.itemImage.image = UIImage(named: imageName!)
         
-        cell.itemQuantity.text = item.valueForKey("quantity") as String?
+        //cell.itemQuantity.text = item.valueForKey("quantity") as String?
         return cell
         
     }
