@@ -85,7 +85,7 @@ class EditCartViewController: UIViewController, UITableViewDelegate, UITableView
         cell.itemPrice.text = "$\(price)"
         var imageName = item.valueForKey("image") as String?
         cell.itemImage.image = UIImage(named: imageName!)
-        
+        cell.deleteButton.addTarget(self, action:Selector("deletePressed:"), forControlEvents: UIControlEvents.TouchUpInside)
         //cell.itemQuantity.text = item.valueForKey("quantity") as String?
         return cell
         
@@ -159,6 +159,42 @@ class EditCartViewController: UIViewController, UITableViewDelegate, UITableView
             println("Could not fetch \(error), \(error!.userInfo)")
         }
     }
+    
+    
+    func deletePressed(sender: UIButton){
+        
+        
+        let pointInTable: CGPoint = sender.convertPoint(sender.bounds.origin, toView: cartTableView)
+        let indexPath = cartTableView.indexPathForRowAtPoint(pointInTable)
+        
+        
+        let appDel = UIApplication.sharedApplication().delegate as AppDelegate
+        let context:NSManagedObjectContext = appDel.managedObjectContext!
+        let request = NSFetchRequest(entityName: "Cart")
+        
+        if let tv = cartTableView{
+            println(indexPath?.row)
+            context.deleteObject(cartList[indexPath!.row] as NSManagedObject)
+            cartList.removeAtIndex(indexPath!.row)
+            self.cartTableView.beginUpdates()
+            tv.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: UITableViewRowAnimation.Fade)
+            self.cartTableView.endUpdates()
+        }
+        
+        var totalPrice: Double = 0.0
+        for (var i=0; i<cartList.count; i++){
+            totalPrice += cartList[i].valueForKey("price") as Double!
+        }
+        
+        //self.totalLabel.text = "Total: $\(totalPrice)"
+        
+        var error: NSError? = nil
+        if !context.save(&error){
+            abort()
+        }
+        
+    }
+    
     
 
 

@@ -16,6 +16,11 @@ class editTableCell: UITableViewCell {
     @IBOutlet weak var itemAmount: UILabel!
     @IBOutlet weak var itemName: UILabel!
     
+    
+    @IBOutlet weak var deleteButton: UIButton!
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
