@@ -61,11 +61,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KioskScanner/SwiftViewController.swift"
-            timestampString = "448339085.842235"
+            timestampString = "448340995.292649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "connectionState(_:)"
             landmarkType = "5">
          </BreakpointContent>

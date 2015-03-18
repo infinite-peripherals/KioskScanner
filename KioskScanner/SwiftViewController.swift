@@ -25,7 +25,8 @@ class SwiftViewController: UIViewController, DTDeviceDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        scanDevice.barcodeSetScanMode(2, error: nil)
+        scanDevice.barcodeStartScan(nil)
         // Do any additional setup after loading the view.
     }
     
