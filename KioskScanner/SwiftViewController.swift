@@ -15,7 +15,7 @@ class SwiftViewController: UIViewController, DTDeviceDelegate
     // Outlets
     //@IBOutlet weak var textView: UITextView!
     
-    @IBOutlet weak var textView: UITextView!
+   // @IBOutlet weak var textView: UITextView!
     var scannedString: String!
     // Global var
     let scanDevice: DTDevices! = DTDevices.sharedDevice() as DTDevices
@@ -62,14 +62,14 @@ class SwiftViewController: UIViewController, DTDeviceDelegate
     // MARK: - DTDEVICES DELEGATE
     // Get barcodes
     func barcodeData(barcode: String!, type: Int32) {
-        self.performSegueWithIdentifier("scanned", sender: self)
         scannedString = barcode
-        textView.text = barcode
+        self.performSegueWithIdentifier("scanned", sender: self)
+       // textView.text = barcode
     }
     
     // Get card swipe
     func magneticCardData(track1: String!, track2: String!, track3: String!) {
-        textView.text = "Track1: \(track1)\nTrack2: \(track2)\nTrack 3: \(track3)"
+        //textView.text = "Track1: \(track1)\nTrack2: \(track2)\nTrack 3: \(track3)"
     }
     
     

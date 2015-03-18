@@ -54,6 +54,15 @@ class EditCartViewController: UIViewController, UITableViewDelegate, UITableView
         
         println("cartList \(cartList.count)")
         
+        var totalPrice: Double = 0.0
+        for (var i=0; i<cartList.count; i++){
+            var currentQuantity = cartList[i].valueForKey("quantity") as Int!
+            
+            totalPrice += cartList[i].valueForKey("price") as Double! * Double(currentQuantity)
+        }
+        
+        self.totalLabel.text = "Total: $\(totalPrice)"
+        
         self.cartTableView.separatorStyle = UITableViewCellSeparatorStyle.None;
         //self.cartTableView.editing = true;
         self.cartTableView.reloadData()
@@ -238,7 +247,7 @@ class EditCartViewController: UIViewController, UITableViewDelegate, UITableView
                 
                 currentCell.itemQuantity.text = "\(newQuantity)"
                 var currentPrice = fetchResults[0].valueForKey("price") as Double
-                currentCell.itemAmount.text = "\(Double(newQuantity) * currentPrice)"
+                currentCell.itemAmount.text = "$\(Double(newQuantity) * currentPrice)"
                 self.cartTableView.endUpdates()
                 
                 
@@ -291,7 +300,7 @@ class EditCartViewController: UIViewController, UITableViewDelegate, UITableView
                 
                 currentCell.itemQuantity.text = "\(newQuantity)"
                 var currentPrice = fetchResults[0].valueForKey("price") as Double
-                currentCell.itemAmount.text = "\(Double(newQuantity) * currentPrice)"
+                currentCell.itemAmount.text = "$\(Double(newQuantity) * currentPrice)"
                 self.cartTableView.endUpdates()
                 
                 
